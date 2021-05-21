@@ -13,7 +13,7 @@ session_start();
         $password = $_POST['password'];
 
 
-        $query = "insert into users (user_name,email,password,phone,user_role,balance,image) values ('$user_name','$email','$password','$phone','client',0)";
+        $query = "insert into users (user_name,email,password,phone,user_role,balance) values ('$user_name','$email','$password','$phone','client',0)";
         $result = mysqli_query($con, $query);
 
         if($result) {
