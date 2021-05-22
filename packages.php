@@ -97,10 +97,10 @@ session_start();
             <img src="assets/img/packages2.jpg" style="max-width: 100%;" alt="">
 
             <div class="row mt-5">
-                <a class="btn btn-primary col-5" href="package.php?type=silver">Get the Silver Package</a>
-                <a class="btn btn-primary col-5 ml-5" href="package.php?type=silver">Get the Gold Package</a>
-                <a class="btn btn-primary col-5 mt-5" href="package.php?type=silver">Get the Houzz Package</a>
-                <a class="btn btn-primary col-5 ml-5 mt-5" href="package.php?type=silver">Get the Diamond Package</a>
+                <a class="btn btn-primary col-5" href="package.php?name=silver&cost=1300">Get the Silver Package</a>
+                <a class="btn btn-primary col-5 ml-5" href="package.php?name=gold&cost=1800">Get the Gold Package</a>
+                <a class="btn btn-primary col-5 mt-5" href="package.php?name=houzz&cost=2000">Get the Houzz Package</a>
+                <a class="btn btn-primary col-5 ml-5 mt-5" href="package.php?name=diamond&cost=2500">Get the Diamond Package</a>
             </div>
     </div>
     </section>
