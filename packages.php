@@ -5,6 +5,10 @@ session_start();
     include("functions.php");
 
     $user_data = check_login($con);
+    $user_name = $user_data['user_name'];
+
+    $check_package_query = "select * from packages where client_name = '$user_name'";
+    $check_package = mysqli_query($con, $check_package_query);
 
 ?>
 

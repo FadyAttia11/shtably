@@ -23,6 +23,47 @@ session_start();
     $Alumetal = "false";
 
     if($_SERVER['REQUEST_METHOD'] == "POST") {
+        if(isset($_POST['Cracking'])) {
+            $Cracking = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Isolation'])) {
+            $Isolation = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Plumbing'])) {
+            $Plumbing = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Electricity'])) {
+            $Electricity = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['ACs'])) {
+            $ACs = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Carpentry'])) {
+            $Carpentry = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Gibson'])) {
+            $Gibson = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Paint'])) {
+            $Paint = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Floors'])) {
+            $Floors = "true";
+            $Precentage += 0.12;
+        }
+        if(isset($_POST['Alumetal'])) {
+            $Alumetal = "true";
+            $Precentage += 0.12;
+        }
+
         if(isset($_POST['full_package'])) {
             $get_money_query = "select * from users where user_role = 'admin'";
             $get_money = mysqli_query($con, $get_money_query);
@@ -35,9 +76,9 @@ session_start();
                 $add_money = mysqli_query($con, $add_money_query);
         
                 if($add_money) {
-                    $query = "insert into packages (package_name,client_name,price) values ('$package_name','$user_name','$package_cost')";
+                    $query = "insert into packages (package_name,client_name,price,Full,Cracking,Isolation,Plumbing,Electricity,ACs,Carpentry,Gibson,Paint,Floors,Alumetal) values ('$package_name','$user_name','$package_cost','true','$Cracking','$Isolation','$Plumbing','$Electricity','$ACs','$Carpentry','$Gibson','$Paint','$Floors','$Alumetal')";
                     $result = mysqli_query($con, $query);
-    
+
                     if($result) {
                         $msg = "Successfully Added This Package";
                     } else {
@@ -50,47 +91,6 @@ session_start();
             } 
 
         } else {
-    
-            if(isset($_POST['Cracking'])) {
-                $Cracking = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Isolation'])) {
-                $Isolation = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Plumbing'])) {
-                $Plumbing = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Electricity'])) {
-                $Electricity = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['ACs'])) {
-                $ACs = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Carpentry'])) {
-                $Carpentry = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Gibson'])) {
-                $Gibson = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Paint'])) {
-                $Paint = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Floors'])) {
-                $Floors = "true";
-                $Precentage += 0.12;
-            }
-            if(isset($_POST['Alumetal'])) {
-                $Alumetal = "true";
-                $Precentage += 0.12;
-            }
 
             $get_money_query = "select * from users where user_role = 'admin'";
             $get_money = mysqli_query($con, $get_money_query);
@@ -104,7 +104,7 @@ session_start();
                 $add_money = mysqli_query($con, $add_money_query);
         
                 if($add_money) {
-                    $query = "insert into points (package_name,client_name,price,Cracking,Isolation,Plumbing,Electricity,ACs,Carpentry,Gibson,Paint,Floors,Alumetal) values ('$package_name','$user_name','$package_cost','$Cracking','$Isolation','$Plumbing','$Electricity','$ACs','$Carpentry','$Gibson','$Paint','$Floors','$Alumetal')";
+                    $query = "insert into packages (package_name,client_name,price,Full,Cracking,Isolation,Plumbing,Electricity,ACs,Carpentry,Gibson,Paint,Floors,Alumetal) values ('$package_name','$user_name','$package_cost','false','$Cracking','$Isolation','$Plumbing','$Electricity','$ACs','$Carpentry','$Gibson','$Paint','$Floors','$Alumetal')";
                     $result = mysqli_query($con, $query);
     
                     if($result) {
