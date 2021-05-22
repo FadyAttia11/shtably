@@ -62,7 +62,6 @@ session_start();
               <li class="active"><a href="packages.php">Choose Packages</a></li>
               <li><a href="engineers.php">Our Engineers</a></li>
               <li><a href="workers.php">Our Workers</a></li>
-              <li><a href="my-cart.php">My Cart</a></li>
               <li><a href="#">Client: <?php echo $user_data['user_name'] ?></a></li>
               <li><a href="logout.php">Logout</a></li>
               
