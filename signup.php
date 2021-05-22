@@ -11,9 +11,10 @@ session_start();
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $address = $_POST['address'];
 
 
-        $query = "insert into users (user_name,email,password,phone,user_role,balance) values ('$user_name','$email','$password','$phone','client',0)";
+        $query = "insert into users (user_name,email,password,phone,address,user_role,balance) values ('$user_name','$email','$password','$phone','$address','client',0)";
         $result = mysqli_query($con, $query);
 
         if($result) {
@@ -114,6 +115,9 @@ session_start();
             <input type="password" class="form-control" placeholder="Password" name="password" required>
         </div>
         </div>
+
+        <textarea class="form-control mb-3" rows="5" name="address" placeholder="Your Address.."></textarea>
+
 
         <button type="submit" class="btn btn-primary">Register</button>
         already have an account? <a href="login.php">login</a><br>
