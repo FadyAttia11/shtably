@@ -96,6 +96,20 @@ session_start();
 
     <section class="inner-page">
       <div class="container">
+          <?php
+            if($check_package && mysqli_num_rows($check_package) > 0) {
+                $package_data = mysqli_fetch_assoc($check_package);
+          ?>
+            <h2>You Are Already Subscribed in a Package</h2>
+            <h4>Yours: <?php echo $package_data['package_name'] ?> Package</h4>
+            <?php 
+                if($package_data['Full'] == 'true') {
+            ?>
+            <p>You Are Subscribed to the <strong>Full</strong> Package.</p>
+            <?php } else { ?>
+            <p>You Are Subscribed to a certain points of the package.</p>
+            <?php } ?>
+          <?php } else { ?>
             <h2>Choose Packages</h2>
             <p>Note: prices here are the reservations price (10% of the total price)</p>
             <img src="assets/img/packages2.jpg" style="max-width: 100%;" alt="">
@@ -106,6 +120,8 @@ session_start();
                 <a class="btn btn-primary col-5 mt-5" href="package.php?name=houzz&cost=2000">Get the Houzz Package</a>
                 <a class="btn btn-primary col-5 ml-5 mt-5" href="package.php?name=diamond&cost=2500">Get the Diamond Package</a>
             </div>
+
+          <?php } ?>
     </div>
     </section>
 
